@@ -24,3 +24,37 @@ console.log(counter(110));
 console.log(counter());
 console.log(counter());
 console.log(counter());
+
+
+// обекты c "this"
+
+var greet = function(){
+  return 'Hi! My name is ' + this.name;
+}
+
+var person = {
+  name: 'John',
+  greet: greet,
+  _age: 50,
+  get age(){
+    return this._age;
+  },
+  set age(value){
+    this._age = value;
+  }
+}
+
+var person2 = {
+  name: 'Bob',
+  greet: greet
+}
+
+console.log(person.greet());
+console.log(person2.greet());
+
+//геттер - сеттер
+
+console.log(person.age);
+
+
+
